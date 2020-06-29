@@ -5,7 +5,7 @@ import {FormsModule} from "@angular/forms";
 
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/materiaL/card'
-import { MatButtonModule} from "@angular/material/button";
+import { MatButtonModule } from "@angular/material/button";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
