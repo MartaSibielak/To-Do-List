@@ -1,4 +1,6 @@
-mat-card{
+@import "../../../assets/scss/variables";
+
+mat-expansion-panel{
   width: 80%;
   margin: auto;
 }
@@ -9,6 +11,6 @@ textarea {
 }
 
 .mat-button{
-  color: whitesmoke;
-  background-color: darkgray;
+  color: white;
+  background-color: $brown;
 }

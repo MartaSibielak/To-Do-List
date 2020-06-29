@@ -1,0 +1,20 @@
+@import "../../assets/scss/variables";
+
+mat-toolbar{
+  background-color: $brown;
+  color: white;
+}
+
+.navbar{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  text-decoration: none;
+}
+.navbar-item{
+  font-size: 14px;
+  margin: 2em;
+  letter-spacing: 0.07em;
+}
+
+
