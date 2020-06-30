@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 import {Post} from "../post.model";
+import {PostsService} from "../posts.service";
 
 @Component({
   selector: 'app-post-list',
@@ -13,6 +14,8 @@ export class PostListComponent {
 
   done = [];
   inprogress = [];
+
+  constructor(public postsService: PostsService) {}
 
   drop(event: CdkDragDrop<Object[]>) {
     if (event.previousContainer === event.container) {
