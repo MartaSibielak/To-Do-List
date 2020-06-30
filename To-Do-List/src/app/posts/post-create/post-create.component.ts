@@ -1,4 +1,5 @@
 import {Component, OnInit, EventEmitter, Output} from '@angular/core';
+import {Post} from "../post.model";
 
 @Component({
   selector: 'app-post-create',
@@ -9,7 +10,7 @@ export class PostCreateComponent implements OnInit {
 
   content = '';
   title = '';
-  @Output() taskCreated = new EventEmitter();
+  @Output() taskCreated = new EventEmitter<Post>();
 
   selectStatus = ['To do', 'In progress', 'Done'];
   constructor() { }
@@ -18,7 +19,7 @@ export class PostCreateComponent implements OnInit {
   }
 
   onAddPost(){
-    const task = {
+    const task: Post = {
       title: this.title,
       content: this.content
     };

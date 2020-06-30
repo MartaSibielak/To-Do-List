@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
+import {Post} from "../post.model";
 
 @Component({
   selector: 'app-post-list',
@@ -8,7 +9,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag
 })
 export class PostListComponent {
 
-  @Input() todo = [];
+  @Input() todo: Post[] = [];
 
   done = [];
   inprogress = [];
