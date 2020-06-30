@@ -9,7 +9,11 @@
           type="text"
           name="title"
           ngModel
-          placeholder="Task name">
+          placeholder="Task name"
+          required
+          minlength="3"
+          #title="ngModel">
+          <mat-error *ngIf="title.invalid">Title is required</mat-error>
       </mat-form-field>
 
       <mat-form-field>
