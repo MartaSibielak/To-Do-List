@@ -1,21 +1,35 @@
 <mat-accordion>
   <mat-expansion-panel>
     <mat-expansion-panel-header>Add Task</mat-expansion-panel-header>
-    <mat-form-field><input matInput [(ngModel)]="title" placeholder="Task name"></mat-form-field>
-      <mat-form-field>
-        <textarea
-          matInput
-          rows="6"
-          [(ngModel)]="content"
-        placeholder="Task content">
-        </textarea>
-      </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        [(ngModel)]="title"
+        placeholder="Task name">
+    </mat-form-field>
+    <mat-form-field>
+      <div>
+        <mat-select
+          [(ngModel)]="selectStatus">
+          <mat-option
+            *ngFor="let option of selectStatus"
+            [value]="option">
+            {{ option }}
+          </mat-option>
+        </mat-select>
+      </div>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        matInput
+        rows="6"
+        [(ngModel)]="content"
+      placeholder="Task content">
+      </textarea>
+    </mat-form-field>
     <button mat-button (click)="onAddPost()">Save Task</button>
   </mat-expansion-panel>
 </mat-accordion>
-
-<p>{{title}}</p>
-<p>{{content}}</p>
 
 
 

@@ -17,6 +17,7 @@ import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { HeaderComponent } from './header/header.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import {DragDropModule} from "@angular/cdk/drag-drop";
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
     MatToolbarModule,
     MatGridListModule,
     MatExpansionModule,
-    DragDropModule
+    DragDropModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

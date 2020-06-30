@@ -6,7 +6,8 @@
       [cdkDropListData]="todo"
       class="list"
       (cdkDropListDropped)="drop($event)">
-      <div class="item-box todo" *ngFor="let item of todo" cdkDrag>{{item.title}}{{item.content}}</div>
+      <div class="item-box todo" *ngFor="let item of todo" cdkDrag>{{item.title}}
+        <p>{{item.content}}</p></div>
     </div>
   </div>
 
@@ -17,7 +18,8 @@
       [cdkDropListData]="inprogress"
       class="list"
       (cdkDropListDropped)="drop($event)">
-      <div class="item-box inprogress" *ngFor="let item of inprogress" cdkDrag>{{item.title}}{{item.content}}
+      <div class="item-box inprogress" *ngFor="let item of inprogress" cdkDrag>{{item.title}}
+        <p>{{item.content}}</p>
       </div>
     </div>
   </div>
@@ -29,7 +31,10 @@
       [cdkDropListData]="done"
       class="list"
       (cdkDropListDropped)="drop($event)">
-      <div class="item-box done" *ngFor="let item of done" cdkDrag>{{item.title}}{{item.content}}</div>
+      <div class="item-box done" *ngFor="let item of done" cdkDrag>{{item.title}}
+        <p>{{item.content}}</p></div>
     </div>
   </div>
 </div>
+
+<p class="message" >No task added yet</p>

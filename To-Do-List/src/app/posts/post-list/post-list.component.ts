@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 
 @Component({
@@ -8,18 +8,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag
 })
 export class PostListComponent {
 
-  tasks = [
-    {title: 'first title', content: 'this is first task content'},
-    {title: 'second title', content: 'this is second task content'},
-    {title: 'third title', content: 'this is third task content'},
-
-  ];
-  todo = [
-    {title: 'first title', content: 'this is first task content'},
-    {title: 'second title', content: 'this is second task content'},
-    {title: 'third title', content: 'this is third task content'},
-
-  ];
+  @Input() todo = [];
 
   done = [];
   inprogress = [];
