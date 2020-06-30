@@ -8,9 +8,4 @@ import {Post} from "./posts/post.model";
 })
 export class AppComponent {
 
-  storedTasks: Post[] = [];
-
-  onTaskAdded(task){
-    this.storedTasks.push(task);
-  }
 }

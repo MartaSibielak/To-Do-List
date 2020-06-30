@@ -1,6 +1,7 @@
-import {Component, OnInit, EventEmitter, Output} from '@angular/core';
+import {Component, OnInit, EventEmitter} from '@angular/core';
 import {Post} from "../post.model";
 import {NgForm} from "@angular/forms";
+import {PostsService} from "../posts.service";
 
 @Component({
   selector: 'app-post-create',
@@ -11,10 +12,10 @@ export class PostCreateComponent implements OnInit {
 
   content = '';
   title = '';
-  @Output() taskCreated = new EventEmitter<Post>();
+  taskCreated = new EventEmitter<Post>();
 
   selectStatus = ['To do', 'In progress', 'Done'];
-  constructor() { }
+  constructor(public postService: PostsService) {}
 
   ngOnInit(): void {
   }
@@ -27,7 +28,7 @@ export class PostCreateComponent implements OnInit {
       title: form.value.title,
       content: form.value.content
     };
-    this.taskCreated.emit(task);
+    this.postService.addPost(form.value.title, form.value.content)
   }
 
 }
