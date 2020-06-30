@@ -8,24 +8,23 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag
 })
 export class PostListComponent {
 
+  tasks = [
+    {title: 'first title', content: 'this is first task content'},
+    {title: 'second title', content: 'this is second task content'},
+    {title: 'third title', content: 'this is third task content'},
+
+  ];
   todo = [
-    'Get to work',
-    'Pick up groceries',
+    {title: 'first title', content: 'this is first task content'},
+    {title: 'second title', content: 'this is second task content'},
+    {title: 'third title', content: 'this is third task content'},
+
   ];
 
-  done = [
-    'Get up',
-    'Brush teeth',
-    'Walk dog'
-  ];
+  done = [];
+  inprogress = [];
 
-  inprogress = [
-    'Get up',
-    'Check e-mail',
-    'Walk dog'
-  ];
-
-  drop(event: CdkDragDrop<string[]>) {
+  drop(event: CdkDragDrop<Object[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {

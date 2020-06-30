@@ -1,16 +1,21 @@
 <mat-accordion>
   <mat-expansion-panel>
     <mat-expansion-panel-header>Add Task</mat-expansion-panel-header>
+    <mat-form-field><input matInput [(ngModel)]="title" placeholder="Task name"></mat-form-field>
       <mat-form-field>
         <textarea
           matInput
           rows="6"
-          [(ngModel)]="enteredValue">
+          [(ngModel)]="content"
+        placeholder="Task content">
         </textarea>
       </mat-form-field>
-    <button mat-button (click)="onAddPost()">Save Post</button>
+    <button mat-button (click)="onAddPost()">Save Task</button>
   </mat-expansion-panel>
 </mat-accordion>
+
+<p>{{title}}</p>
+<p>{{content}}</p>
 
 
 
