@@ -1,12 +1,16 @@
 <mat-toolbar>
   <ul class="navbar">
     <li class="navbar-item">
-      <a href="#"></a>KANBAN</li>
+      <a class="item-link" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">KANBAN</a>
+    </li>
     <li class="navbar-item">
-      <a href="#"></a>TO DO</li>
+      <a class="item-link" routerLink="todo" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">TO DO</a>
+    </li>
     <li class="navbar-item">
-      <a href="#"></a>IN PROGRESS</li>
+      <a class="item-link" routerLink="inprogress" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">IN PROGRESS</a>
+    </li>
     <li class="navbar-item">
-      <a href="#"></a>DONE</li>
+      <a class="item-link" routerLink="done" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">DONE</a>
+    </li>
   </ul>
 </mat-toolbar>

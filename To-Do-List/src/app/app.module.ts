@@ -21,6 +21,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatIconModule} from "@angular/material/icon";
 import { InProgressComponent } from './in-progress/in-progress.component';
 import { DoneComponent } from './done/done.component';
+import { TodoComponent } from './todo/todo.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { DoneComponent } from './done/done.component';
     HeaderComponent,
     PostListComponent,
     InProgressComponent,
-    DoneComponent
+    DoneComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,

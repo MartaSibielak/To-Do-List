@@ -1,6 +1,7 @@
+<app-post-create></app-post-create>
 <div cdkDropListGroup class="list-wrapper">
   <div class="list-container">
-    <h2 id="todo-title">To do</h2>
+    <h2 id="todo-title" class="header-title">To do</h2>
     <div
       id="todoList"
       cdkDropList
@@ -10,7 +11,6 @@
       <div class="item-box todo" *ngFor="let item of todo" cdkDrag>
         <h2>{{item.title}}</h2>
         <p>{{item.content}}</p>
-        {{item.status === 'todo'}}
         <mat-action-row>
           <button mat-button>EDIT</button>
           <button mat-button>DELETE</button>
@@ -19,8 +19,8 @@
     </div>
   </div>
 
-  <div class="example-container">
-    <h2 id="inprogress-title">In progress</h2>
+  <div class="list-container">
+    <h2 id="inprogress-title" class="header-title">In progress</h2>
     <div
       id="inprogressList"
       cdkDropList
@@ -30,7 +30,6 @@
       <div class="item-box inprogress" *ngFor="let item of inprogress" cdkDrag>
         <h2>{{item.title}}</h2>
         <p>{{item.content}}</p>
-        {{item.status}}
         <mat-action-row>
           <button mat-button>EDIT</button>
           <button mat-button>DELETE</button>
@@ -39,8 +38,8 @@
     </div>
   </div>
 
-  <div class="example-container">
-    <h2 id="done-title">Done</h2>
+  <div class="list-container">
+    <h2 id="done-title" class="header-title">Done</h2>
     <div
       id="doneList"
       cdkDropList

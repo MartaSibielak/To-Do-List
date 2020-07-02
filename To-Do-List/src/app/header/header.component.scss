@@ -3,6 +3,13 @@
 mat-toolbar{
   background-color: $brown;
   color: white;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.item-link{
+  text-decoration: none;
+  color: inherit;
 }
 
 .navbar{
@@ -13,9 +20,14 @@ mat-toolbar{
 }
 .navbar-item{
   font-size: 14px;
-  margin: 2em;
+  margin-right: 2em;
   letter-spacing: 0.07em;
-
 }
 
+.active {
+  background-color: $background-color;
+  color: $font-color;
+  padding: 1.70em;
+  border-radius: 2em 2em 0 0;
+}
 
