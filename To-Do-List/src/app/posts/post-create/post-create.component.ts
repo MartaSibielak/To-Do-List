@@ -12,9 +12,8 @@ export class PostCreateComponent implements OnInit {
 
   content = '';
   title = '';
-  taskCreated = new EventEmitter<Post>();
+  status = 'todo';
 
-  selectStatus = ['To do', 'In progress', 'Done'];
   constructor(public postService: PostsService) {}
 
   ngOnInit(): void {
@@ -26,9 +25,11 @@ export class PostCreateComponent implements OnInit {
     }
     const task: Post = {
       title: form.value.title,
-      content: form.value.content
+      content: form.value.content,
+      status: form.value.status
     };
-    this.postService.addPost(form.value.title, form.value.content)
+    this.postService.addPost(form.value.title, form.value.content, form.value.status);
+    form.resetForm();
   }
 
 }

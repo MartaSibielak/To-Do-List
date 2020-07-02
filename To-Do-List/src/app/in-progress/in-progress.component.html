@@ -1,0 +1,16 @@
+<h2 class="header-title">In Progress</h2>
+  <div class="list-container">
+    <div
+      id="todoList"
+      class="list">
+      <div class="item-box todo" *ngFor="let item of inProgressList" cdkDrag>
+        <h2>{{item.title}}</h2>
+        <p>{{item.content}}</p>
+        <p>{{item.status}}</p>
+        <mat-action-row>
+          <button mat-button>EDIT</button>
+          <button mat-button>DELETE</button>
+        </mat-action-row>
+      </div>
+  </div>
+</div>

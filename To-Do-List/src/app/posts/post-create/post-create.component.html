@@ -11,7 +11,6 @@
           ngModel
           placeholder="Task name"
           required
-          minlength="3"
           #title="ngModel">
           <mat-error *ngIf="title.invalid">Title is required</mat-error>
       </mat-form-field>
@@ -19,15 +18,14 @@
       <mat-form-field>
           <mat-select
             ngModel
-            name="selectStatus">
-            <mat-option
-              *ngFor="let option of selectStatus"
-              [value]="option">
-              {{ option }}
-            </mat-option>
+            [(value)]="status"
+            name="status"
+            placeholder="Select Status">
+            <mat-option value="todo">To Do</mat-option>
+            <mat-option value="inprogress">In Progress</mat-option>
+            <mat-option value="done">Done</mat-option>
           </mat-select>
       </mat-form-field>
-
       <mat-form-field>
       <textarea
         matInput

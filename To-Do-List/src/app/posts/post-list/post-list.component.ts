@@ -12,9 +12,12 @@ import {Subscription} from "rxjs";
 export class PostListComponent implements OnInit, OnDestroy{
 
   todo: Post[] = [];
-  done = [];
-  inprogress = [];
+  done: Post[] = [];
+  inprogress: Post[] = [];
+  status;
   private postsSub: Subscription;
+  private inprogressSub: Subscription;
+  private doneSub: Subscription;
 
   constructor(public postsService: PostsService) {}
 
@@ -24,7 +27,18 @@ export class PostListComponent implements OnInit, OnDestroy{
       .subscribe((posts: Post[]) => {
         this.todo = posts;
       });
+    this.inprogress = this.postsService.getInProgress();
+    this.inprogressSub = this.postsService.getInprogressUpdated()
+      .subscribe((posts: Post[]) => {
+      this.inprogress = posts;
+    });
+    this.done = this.postsService.getDone();
+    this.doneSub = this.postsService.getDoneUpdated()
+      .subscribe((posts: Post[]) => {
+        this.done = posts;
+      })
   }
+
 
   ngOnDestroy(): void {
     this.postsSub.unsubscribe();

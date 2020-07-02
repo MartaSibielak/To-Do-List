@@ -18,6 +18,8 @@ import { HeaderComponent } from './header/header.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import {DragDropModule} from "@angular/cdk/drag-drop";
 import {MatSelectModule} from "@angular/material/select";
+import {MatIconModule} from "@angular/material/icon";
+import { InProgressComponent } from './in-progress/in-progress.component';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import {MatSelectModule} from "@angular/material/select";
     PostsComponent,
     PostCreateComponent,
     HeaderComponent,
-    PostListComponent
+    PostListComponent,
+    InProgressComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import {MatSelectModule} from "@angular/material/select";
     MatGridListModule,
     MatExpansionModule,
     DragDropModule,
-    MatSelectModule
+    MatSelectModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
