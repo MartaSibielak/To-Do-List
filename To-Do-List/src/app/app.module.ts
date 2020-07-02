@@ -20,6 +20,7 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
 import {MatSelectModule} from "@angular/material/select";
 import {MatIconModule} from "@angular/material/icon";
 import { InProgressComponent } from './in-progress/in-progress.component';
+import { DoneComponent } from './done/done.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { InProgressComponent } from './in-progress/in-progress.component';
     PostCreateComponent,
     HeaderComponent,
     PostListComponent,
-    InProgressComponent
+    InProgressComponent,
+    DoneComponent
   ],
   imports: [
     BrowserModule,

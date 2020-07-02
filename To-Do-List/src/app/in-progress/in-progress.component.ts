@@ -21,7 +21,6 @@ export class InProgressComponent implements OnInit {
         if (posts[0].status === 'inprogress'){
           this.inProgressList = posts;
         }
-
       });
   }
 
