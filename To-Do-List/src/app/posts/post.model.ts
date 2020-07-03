@@ -3,5 +3,5 @@ export interface Post {
   content: string;
   status: string;
   deadline: Date;
-  priority: string;
+  priority: number;
 }

@@ -41,6 +41,7 @@
             <mat-option value="done">Done</mat-option>
           </mat-select>
       </mat-form-field>
+
       <mat-form-field>
       <textarea
         matInput
@@ -51,14 +52,21 @@
       </textarea>
       </mat-form-field>
 
-      <!--      //priority-->
       <mat-card-content>
+        <mat-label>Choose Priority</mat-label>
+        <mat-grid-list cols="3" rowHeight="2:1">
+          <mat-grid-tile>low</mat-grid-tile>
+          <mat-grid-tile>middle</mat-grid-tile>
+          <mat-grid-tile>high</mat-grid-tile>
+        </mat-grid-list>
         <mat-slider
-          thumbLabel
-          [displayWith]="formatLabel"
-          tickInterval="4"
+          (input)="onInputChange($event)"
+          [(ngModel)]="priority"
+          tickInterval="2"
+          name="priority"
+          value="2"
           min="1"
-          max="5"></mat-slider>
+          max="3"></mat-slider>
       </mat-card-content>
 
       <button

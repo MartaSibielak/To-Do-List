@@ -32,7 +32,7 @@ export class PostsService {
     return this.doneUpdated.asObservable();
   }
 
-  addPost(title: string, content: string, status: string, deadline: Date, priority: string){
+  addPost(title: string, content: string, status: string, deadline: Date, priority: number){
 
      const post: Post = {title: title, content: content, status: status, deadline: deadline, priority: priority};
     if (status === 'inprogress'){

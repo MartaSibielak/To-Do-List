@@ -9,15 +9,18 @@
       class="list"
       (cdkDropListDropped)="drop($event)">
       <div class="item-box todo" *ngFor="let item of todo" cdkDrag>
+        <div class="action-buttons">
+          <button mat-button>
+            <mat-icon aria-hidden="false" aria-label="Example home icon">create</mat-icon>
+          </button>
+          <button mat-button>
+            <mat-icon aria-hidden="false" aria-label="Example close icon">close</mat-icon>
+          </button>
+        </div>
         <div class="box-title">{{item.title | titlecase}}</div>
-        <mat-label class="card-info-header">Deadline:
-        <div class="box-deadline">{{item.deadline | date}}</div></mat-label>
         <div class="box-content">{{item.content}}</div>
-        <div class="box-priority">{{item.priority}}</div>
-        <mat-action-row>
-          <button mat-button>EDIT</button>
-          <button mat-button>DELETE</button>
-        </mat-action-row>
+        <div class="box-deadline">deadline: {{item.deadline | date}}</div>
+        <div class="box-priority">priority: {{item.priority | changeStatus}}</div>
       </div>
     </div>
   </div>
@@ -30,15 +33,19 @@
       [cdkDropListData]="inprogress"
       class="list"
       (cdkDropListDropped)="drop($event)">
-      <div class="item-box inprogress" *ngFor="let item of inprogress" cdkDrag>
-        <div class="box-title">{{item.title}}</div>
+      <div class="item-box inprogress" *ngFor="let item of inprogress" cdkDrag >
+        <div class="action-buttons">
+          <button mat-button>
+            <mat-icon aria-hidden="false" aria-label="Example home icon">create</mat-icon>
+          </button>
+          <button mat-button>
+            <mat-icon aria-hidden="false" aria-label="Example close icon">close</mat-icon>
+          </button>
+        </div>
+        <div class="box-title">{{item.title | titlecase}}</div>
         <div class="box-content">{{item.content}}</div>
-        <div class="box-deadline">{{item.deadline | date}}</div>
-        <div class="box-priority">{{item.priority}}</div>
-        <mat-action-row>
-          <button mat-button>EDIT</button>
-          <button mat-button>DELETE</button>
-        </mat-action-row>
+        <div class="box-deadline">deadline: {{item.deadline | date}}</div>
+        <div class="box-priority">priority: {{item.priority | changeStatus}}</div>
       </div>
     </div>
   </div>
@@ -52,17 +59,19 @@
       class="list"
       (cdkDropListDropped)="drop($event)">
       <div class="item-box done" *ngFor="let item of done" cdkDrag>
-        <div class="box-title">{{item.title}}</div>
+        <div class="action-buttons">
+          <button mat-button>
+            <mat-icon aria-hidden="false" aria-label="Example home icon">create</mat-icon>
+          </button>
+          <button mat-button>
+            <mat-icon aria-hidden="false" aria-label="Example close icon">close</mat-icon>
+          </button>
+        </div>
+        <div class="box-title">{{item.title | titlecase}}</div>
         <div class="box-content">{{item.content}}</div>
-        <div class="box-deadline">{{item.deadline | date}}</div>
-        <div class="box-priority">{{item.priority}}</div>
-        <mat-action-row>
-          <button mat-button>EDIT</button>
-          <button mat-button>DELETE</button>
-        </mat-action-row>
+        <div class="box-deadline">deadline: {{item.deadline | date}}</div>
+        <div class="box-priority">priority: {{item.priority | changeStatus}}</div>
       </div>
     </div>
   </div>
 </div>
-
-<!--jezeli item.status === 'inprogress' inprogressPredicate-->

@@ -25,6 +25,7 @@ import { TodoComponent } from './todo/todo.component';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatSliderModule} from "@angular/material/slider";
 import {MatNativeDateModule} from "@angular/material/core";
+import { ChangeStatusPipe } from './change-status.pipe';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {MatNativeDateModule} from "@angular/material/core";
     PostListComponent,
     InProgressComponent,
     DoneComponent,
-    TodoComponent
+    TodoComponent,
+    ChangeStatusPipe
   ],
   imports: [
     BrowserModule,

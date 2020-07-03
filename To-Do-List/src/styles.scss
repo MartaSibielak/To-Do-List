@@ -116,12 +116,22 @@ main {
 }
 
 .card-info-header{
-  display: flex;
-  flex-direction: row;
+  font-size: 14px;
   justify-content: center;
 }
 .box-deadline{
   margin-left: 0.3em;
   margin-bottom: 1em;
   text-align: center;
+}
+mat-label{
+  color: $font-color;
+  margin-top: 1em;
+}
+
+.action-buttons{
+  text-align: right;
+}
+.mat-icon{
+  font-size: 1.2em;
 }

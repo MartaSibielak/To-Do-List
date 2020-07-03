@@ -3,6 +3,7 @@ import {Post} from "../post.model";
 import {FormControl, NgForm} from "@angular/forms";
 import {PostsService} from "../posts.service";
 import {MatDatepicker} from "@angular/material/datepicker";
+import {MatSlider, MatSliderChange} from "@angular/material/slider";
 
 @Component({
   selector: 'app-post-create',
@@ -15,7 +16,7 @@ export class PostCreateComponent implements OnInit {
   title = '';
   status = 'todo';
   @ViewChild('deadline') deadline: MatDatepicker<Date>;
-  priority = 0;
+  priority = 2;
 
   constructor(public postService: PostsService) {}
 
@@ -39,11 +40,8 @@ export class PostCreateComponent implements OnInit {
   }
 
 
-  formatLabel(value: number) {
-    if (value >= 1000) {
-      return Math.round(value / 1000) + 'k';
-    }
-    return this.priority = value;
+  onInputChange(event: MatSliderChange){
+    this.priority = event.value;
   }
 
 }
