@@ -32,9 +32,9 @@ export class PostsService {
     return this.doneUpdated.asObservable();
   }
 
-  addPost(title: string, content: string, status: string){
+  addPost(title: string, content: string, status: string, deadline: Date, priority: string){
 
-     const post: Post = {title: title, content: content, status: status};
+     const post: Post = {title: title, content: content, status: status, deadline: deadline, priority: priority};
     if (status === 'inprogress'){
       this.inprogress.push(post);
       this.inProgressUpdated.next([...this.inprogress]);

@@ -7,6 +7,8 @@
         <h2>{{item.title}}</h2>
         <p>{{item.content}}</p>
         <p>{{item.status}}</p>
+        <div class="box-deadline">{{item.deadline | date}}</div>
+        <div class="box-priority">{{item.priority}}</div>
         <mat-action-row>
           <button mat-button>EDIT</button>
           <button mat-button>DELETE</button>

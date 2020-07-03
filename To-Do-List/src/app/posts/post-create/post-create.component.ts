@@ -1,7 +1,8 @@
-import {Component, OnInit, EventEmitter} from '@angular/core';
+import {Component, OnInit, EventEmitter, ViewChild} from '@angular/core';
 import {Post} from "../post.model";
-import {NgForm} from "@angular/forms";
+import {FormControl, NgForm} from "@angular/forms";
 import {PostsService} from "../posts.service";
+import {MatDatepicker} from "@angular/material/datepicker";
 
 @Component({
   selector: 'app-post-create',
@@ -13,6 +14,8 @@ export class PostCreateComponent implements OnInit {
   content = '';
   title = '';
   status = 'todo';
+  @ViewChild('deadline') deadline: MatDatepicker<Date>;
+  priority = 0;
 
   constructor(public postService: PostsService) {}
 
@@ -26,10 +29,21 @@ export class PostCreateComponent implements OnInit {
     const task: Post = {
       title: form.value.title,
       content: form.value.content,
-      status: form.value.status
+      status: form.value.status,
+      deadline: form.value.deadline,
+      priority: form.value.priority
     };
-    this.postService.addPost(form.value.title, form.value.content, form.value.status);
+    this.postService.addPost(form.value.title, form.value.content, form.value.status, form.value.deadline, form.value.priority);
+    console.log(task);
     form.resetForm();
+  }
+
+
+  formatLabel(value: number) {
+    if (value >= 1000) {
+      return Math.round(value / 1000) + 'k';
+    }
+    return this.priority = value;
   }
 
 }

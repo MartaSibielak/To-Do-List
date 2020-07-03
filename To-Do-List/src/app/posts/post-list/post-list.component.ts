@@ -14,7 +14,7 @@ export class PostListComponent implements OnInit, OnDestroy{
   todo: Post[] = [];
   done: Post[] = [];
   inprogress: Post[] = [];
-  status;
+  status = 'todo';
   private postsSub: Subscription;
   private inprogressSub: Subscription;
   private doneSub: Subscription;

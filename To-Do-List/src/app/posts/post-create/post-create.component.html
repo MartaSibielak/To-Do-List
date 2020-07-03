@@ -15,12 +15,27 @@
           <mat-error *ngIf="title.invalid">Title is required</mat-error>
       </mat-form-field>
 
+      <mat-form-field appearance="standard">
+        <mat-label>Choose a date</mat-label>
+        <input
+          matInput
+          [matDatepicker]="deadline"
+          name="deadline"
+          ngModel>
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="deadline">
+        </mat-datepicker-toggle>
+        <mat-datepicker
+            #deadline>
+        </mat-datepicker>
+      </mat-form-field>
+
       <mat-form-field>
+        <mat-label>Select Option</mat-label>
           <mat-select
-            ngModel
-            [(value)]="status"
-            name="status"
-            placeholder="Select Status">
+            [(ngModel)]="status"
+            name="status">
             <mat-option value="todo">To Do</mat-option>
             <mat-option value="inprogress">In Progress</mat-option>
             <mat-option value="done">Done</mat-option>
@@ -29,12 +44,22 @@
       <mat-form-field>
       <textarea
         matInput
-        rows="4"
+        rows="6"
         name="content"
         ngModel
         placeholder="Task content">
       </textarea>
       </mat-form-field>
+
+      <!--      //priority-->
+      <mat-card-content>
+        <mat-slider
+          thumbLabel
+          [displayWith]="formatLabel"
+          tickInterval="4"
+          min="1"
+          max="5"></mat-slider>
+      </mat-card-content>
 
       <button
         mat-button

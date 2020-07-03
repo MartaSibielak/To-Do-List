@@ -22,6 +22,9 @@ import {MatIconModule} from "@angular/material/icon";
 import { InProgressComponent } from './in-progress/in-progress.component';
 import { DoneComponent } from './done/done.component';
 import { TodoComponent } from './todo/todo.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatSliderModule} from "@angular/material/slider";
+import {MatNativeDateModule} from "@angular/material/core";
 
 
 @NgModule({
@@ -48,9 +51,12 @@ import { TodoComponent } from './todo/todo.component';
     MatExpansionModule,
     DragDropModule,
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSliderModule
   ],
-  providers: [],
+  providers: [MatDatepickerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
