@@ -14,7 +14,7 @@
             <mat-icon aria-hidden="false" aria-label="Example home icon">create</mat-icon>
           </button>
           <button mat-button>
-            <mat-icon aria-hidden="false" aria-label="Example close icon">close</mat-icon>
+            <mat-icon aria-hidden="false" aria-label="Example close icon" (click)="deleteToDoTask(item)">close</mat-icon>
           </button>
         </div>
         <div class="box-title">{{item.title | titlecase}}</div>
@@ -39,7 +39,7 @@
             <mat-icon aria-hidden="false" aria-label="Example home icon">create</mat-icon>
           </button>
           <button mat-button>
-            <mat-icon aria-hidden="false" aria-label="Example close icon">close</mat-icon>
+            <mat-icon aria-hidden="false" aria-label="Example close icon" (click)="deleteInProgressTask(item)">close</mat-icon>
           </button>
         </div>
         <div class="box-title">{{item.title | titlecase}}</div>
@@ -64,7 +64,7 @@
             <mat-icon aria-hidden="false" aria-label="Example home icon">create</mat-icon>
           </button>
           <button mat-button>
-            <mat-icon aria-hidden="false" aria-label="Example close icon">close</mat-icon>
+            <mat-icon aria-hidden="false" aria-label="Example close icon" (click)="deleteDoneTask(item)">close</mat-icon>
           </button>
         </div>
         <div class="box-title">{{item.title | titlecase}}</div>

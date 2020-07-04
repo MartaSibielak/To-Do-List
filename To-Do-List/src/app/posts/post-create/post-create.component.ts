@@ -40,6 +40,8 @@ export class PostCreateComponent implements OnInit {
   }
 
 
+
+
   onInputChange(event: MatSliderChange){
     this.priority = event.value;
   }

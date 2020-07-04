@@ -1,6 +1,6 @@
 import {Post} from "./post.model";
 import {Injectable} from "@angular/core";
-import {Subject} from "rxjs";
+import {iif, Subject} from "rxjs";
 
 @Injectable({providedIn: 'root'})
 export class PostsService {
@@ -33,12 +33,10 @@ export class PostsService {
   }
 
   addPost(title: string, content: string, status: string, deadline: Date, priority: number){
-
-     const post: Post = {title: title, content: content, status: status, deadline: deadline, priority: priority};
+    const post: Post = {title: title, content: content, status: status, deadline: deadline, priority: priority};
     if (status === 'inprogress'){
       this.inprogress.push(post);
       this.inProgressUpdated.next([...this.inprogress]);
-      console.log(post)
     }else if (status === 'done'){
       this.done.push(post);
       this.doneUpdated.next([...this.done])
@@ -46,5 +44,36 @@ export class PostsService {
       this.posts.push(post);
       this.postsUpdated.next([...this.posts]);
     }
+  }
+  deleteToDoTask(task: Post){
+    const index: number = this.posts.indexOf(task);
+    console.log(task);
+    if (index !== -1){
+      this.posts = this.posts.filter(item => item !== task)
     }
+    this.updateList(this.postsUpdated, this.posts)
+  }
+
+  deleteInProgressTask(task: Post){
+    const index: number = this.inprogress.indexOf(task);
+    console.log(task);
+    if (index !== -1){
+      this.inprogress = this.inprogress.filter(item => item !== task)
+    }
+    this.updateList(this.inProgressUpdated, this.inprogress)
+  }
+  deleteDoneTask(task: Post){
+    const index: number = this.done.indexOf(task);
+    console.log(task);
+    if (index !== -1){
+      this.done = this.done.filter(item => item !== task)
+    }
+    this.updateList(this.doneUpdated, this.done)
+  }
+
+  updateList(updList: Subject<Post[]>, list: Post[]){
+    updList.next([...list])
+  }
+
+
 }

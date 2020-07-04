@@ -9,7 +9,7 @@
           <mat-icon aria-hidden="false" aria-label="Example home icon">create</mat-icon>
         </button>
         <button mat-button>
-          <mat-icon aria-hidden="false" aria-label="Example close icon">close</mat-icon>
+          <mat-icon aria-hidden="false" aria-label="Example close icon" (click)="deleteToDoTask(item)">close</mat-icon>
         </button>
       </div>
       <h2>{{item.title | titlecase}}</h2>
