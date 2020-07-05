@@ -1,7 +1,8 @@
 import {Post} from "./post.model";
 import {Injectable} from "@angular/core";
-import {iif, Subject} from "rxjs";
-import {NgForm} from "@angular/forms";
+import {Subject} from "rxjs";
+import {Router} from "@angular/router";
+
 
 @Injectable({providedIn: 'root'})
 export class PostsService {
@@ -12,7 +13,6 @@ export class PostsService {
   private postsUpdated = new Subject<Post[]>();
   private inProgressUpdated = new Subject<Post[]>();
   private doneUpdated = new Subject<Post[]>();
-  newInfo: Post;
 
   getPosts(){
     return [...this.posts];
@@ -73,12 +73,6 @@ export class PostsService {
     updList.next([...list])
   }
 
-  updateTask(task: Post){
-    const index: number = this.inprogress.indexOf(task);
-    if (index !== -1){
-      console.log(task)
-    }
-  }
 
 
 }

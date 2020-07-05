@@ -9,13 +9,6 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-
-  }
-
-  onToggleSidenav(){
-
-  }
-
+  ngOnInit(): void { }
 
 }

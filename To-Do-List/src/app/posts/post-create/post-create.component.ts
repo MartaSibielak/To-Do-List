@@ -4,6 +4,7 @@ import {FormControl, NgForm} from "@angular/forms";
 import {PostsService} from "../posts.service";
 import {MatDatepicker} from "@angular/material/datepicker";
 import {MatSlider, MatSliderChange} from "@angular/material/slider";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-post-create',
@@ -17,7 +18,6 @@ export class PostCreateComponent implements OnInit {
   status = 'todo';
   @ViewChild('deadline') deadline: MatDatepicker<Date>;
   priority = 2;
-  newInfo: Post;
 
   constructor(public postService: PostsService) {}
 
@@ -36,13 +36,6 @@ export class PostCreateComponent implements OnInit {
       priority: form.value.priority
     };
     this.postService.addPost(form.value.title, form.value.content, form.value.status, form.value.deadline, form.value.priority);
-    console.log(task);
     form.resetForm();
   }
-
-  onInputChange(event: MatSliderChange){
-    this.priority = event.value;
-  }
-
-
 }

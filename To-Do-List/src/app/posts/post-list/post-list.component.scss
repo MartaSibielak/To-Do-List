@@ -64,7 +64,6 @@
   font-size: 16px;
 }
 
-
 .header-title{
   margin-bottom: 1em;
 }
@@ -105,15 +104,21 @@ mat-action-row{
 
 @media (max-width: 575.98px) {
   .item-box{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
     max-width: 100px;
+    margin: 0;
+    padding: 0.3em;
   }
   .box-title{
     max-width: 100px;
     font-size: 16px;
+    margin: 0;
   }
   .box-content{
     max-width: 100px;
     font-size: 14px;
+    margin: 0;
   }
   .box-deadline{
     font-size: 12px;
@@ -122,15 +127,3 @@ mat-action-row{
     font-size: 12px;
   }
 }
-
-@media (max-width: 480px){
-  .list-container{
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-  }
-  .list{
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-  }
-}
-

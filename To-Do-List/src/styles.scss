@@ -157,10 +157,17 @@ mat-label{
 
 @media (max-width: 575.98px) {
   .task-list{
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
     text-align: center;
     margin: 2em 7% 2em 5vw;
     gap: 2em;
+  }
+  .header-title{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 280px) {
+  .header-title{
+    font-size: 12px;
   }
 }

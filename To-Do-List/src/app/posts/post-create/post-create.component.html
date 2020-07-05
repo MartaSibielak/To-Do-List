@@ -1,7 +1,6 @@
 <mat-accordion>
   <mat-expansion-panel>
     <mat-expansion-panel-header>Add Task</mat-expansion-panel-header>
-
     <form (submit)="onAddPost(postForm)" #postForm="ngForm">
       <mat-form-field>
         <input
@@ -14,7 +13,6 @@
           #title="ngModel">
           <mat-error *ngIf="title.invalid">Title is required</mat-error>
       </mat-form-field>
-
       <mat-form-field appearance="standard">
         <mat-label>Choose a date</mat-label>
         <input
@@ -30,7 +28,6 @@
             #deadline>
         </mat-datepicker>
       </mat-form-field>
-
       <mat-form-field>
         <mat-label>Select Option</mat-label>
           <mat-select
@@ -41,7 +38,6 @@
             <mat-option value="done">Done</mat-option>
           </mat-select>
       </mat-form-field>
-
       <mat-form-field>
       <textarea
         matInput
@@ -51,7 +47,6 @@
         placeholder="Task content">
       </textarea>
       </mat-form-field>
-
       <mat-card-content>
         <mat-label>Choose Priority</mat-label>
         <mat-grid-list cols="3" rowHeight="2:1">
@@ -60,7 +55,6 @@
           <mat-grid-tile>high</mat-grid-tile>
         </mat-grid-list>
         <mat-slider
-          (input)="onInputChange($event)"
           [(ngModel)]="priority"
           tickInterval="2"
           name="priority"
@@ -68,12 +62,10 @@
           min="1"
           max="3"></mat-slider>
       </mat-card-content>
-
       <button
         mat-button
         type="submit">Save Task</button>
     </form>
-
   </mat-expansion-panel>
 </mat-accordion>
 
