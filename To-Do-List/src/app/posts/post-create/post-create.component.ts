@@ -17,6 +17,7 @@ export class PostCreateComponent implements OnInit {
   status = 'todo';
   @ViewChild('deadline') deadline: MatDatepicker<Date>;
   priority = 2;
+  newInfo: Post;
 
   constructor(public postService: PostsService) {}
 
@@ -39,11 +40,9 @@ export class PostCreateComponent implements OnInit {
     form.resetForm();
   }
 
-
-
-
   onInputChange(event: MatSliderChange){
     this.priority = event.value;
   }
+
 
 }

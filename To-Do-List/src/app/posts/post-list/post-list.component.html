@@ -11,9 +11,6 @@
       <div class="item-box todo" *ngFor="let item of todo" cdkDrag>
         <div class="action-buttons">
           <button mat-button>
-            <mat-icon aria-hidden="false" aria-label="Example home icon">create</mat-icon>
-          </button>
-          <button mat-button>
             <mat-icon aria-hidden="false" aria-label="Example close icon" (click)="deleteToDoTask(item)">close</mat-icon>
           </button>
         </div>
@@ -36,9 +33,6 @@
       <div class="item-box inprogress" *ngFor="let item of inprogress" cdkDrag >
         <div class="action-buttons">
           <button mat-button>
-            <mat-icon aria-hidden="false" aria-label="Example home icon">create</mat-icon>
-          </button>
-          <button mat-button>
             <mat-icon aria-hidden="false" aria-label="Example close icon" (click)="deleteInProgressTask(item)">close</mat-icon>
           </button>
         </div>
@@ -60,9 +54,6 @@
       (cdkDropListDropped)="drop($event)">
       <div class="item-box done" *ngFor="let item of done" cdkDrag>
         <div class="action-buttons">
-          <button mat-button>
-            <mat-icon aria-hidden="false" aria-label="Example home icon">create</mat-icon>
-          </button>
           <button mat-button>
             <mat-icon aria-hidden="false" aria-label="Example close icon" (click)="deleteDoneTask(item)">close</mat-icon>
           </button>

@@ -51,32 +51,20 @@ export class PostListComponent implements OnInit, OnDestroy{
     this.postsService.deleteDoneTask(task);
   }
 
-
   ngOnDestroy(): void {
     this.postsSub.unsubscribe();
     this.inprogressSub.unsubscribe();
     this.doneSub.unsubscribe();
   }
 
-
   drop(event: CdkDragDrop<Object[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-      // event.previousContainer.data['status'] = event.container.data['status'];
-      // console.log( event.previousContainer.data[0]['status']);
-
     } else {
       transferArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex,
         event.currentIndex);
-      // event.container.data['status'] = event.previousContainer.data['status'];
-      // console.log( event.container.data[0]['status']);
-      // event.container.data[0]['status'] = event.previousContainer.data['status'];
-      // console.log( event.container.data['status']);
-  }}
-
-  changeStatus(event){
-    event.previousContainer.data['status'] = event.container.data['status'] = 'inprogress';
+    }
   }
 }

@@ -1,6 +1,7 @@
 import {Post} from "./post.model";
 import {Injectable} from "@angular/core";
 import {iif, Subject} from "rxjs";
+import {NgForm} from "@angular/forms";
 
 @Injectable({providedIn: 'root'})
 export class PostsService {
@@ -11,6 +12,7 @@ export class PostsService {
   private postsUpdated = new Subject<Post[]>();
   private inProgressUpdated = new Subject<Post[]>();
   private doneUpdated = new Subject<Post[]>();
+  newInfo: Post;
 
   getPosts(){
     return [...this.posts];
@@ -47,7 +49,6 @@ export class PostsService {
   }
   deleteToDoTask(task: Post){
     const index: number = this.posts.indexOf(task);
-    console.log(task);
     if (index !== -1){
       this.posts = this.posts.filter(item => item !== task)
     }
@@ -56,7 +57,6 @@ export class PostsService {
 
   deleteInProgressTask(task: Post){
     const index: number = this.inprogress.indexOf(task);
-    console.log(task);
     if (index !== -1){
       this.inprogress = this.inprogress.filter(item => item !== task)
     }
@@ -64,15 +64,20 @@ export class PostsService {
   }
   deleteDoneTask(task: Post){
     const index: number = this.done.indexOf(task);
-    console.log(task);
     if (index !== -1){
       this.done = this.done.filter(item => item !== task)
     }
     this.updateList(this.doneUpdated, this.done)
   }
-
   updateList(updList: Subject<Post[]>, list: Post[]){
     updList.next([...list])
+  }
+
+  updateTask(task: Post){
+    const index: number = this.inprogress.indexOf(task);
+    if (index !== -1){
+      console.log(task)
+    }
   }
 
 

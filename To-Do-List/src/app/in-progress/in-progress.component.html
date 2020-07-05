@@ -6,9 +6,6 @@
       <div class="item-box todo" *ngFor="let item of inProgressList" cdkDrag>
         <div class="action-buttons">
           <button mat-button>
-            <mat-icon aria-hidden="false" aria-label="Example home icon">create</mat-icon>
-          </button>
-          <button mat-button>
             <mat-icon aria-hidden="false" aria-label="Example close icon" (click)="deleteInProgressTask(item)">close</mat-icon>
           </button>
         </div>
