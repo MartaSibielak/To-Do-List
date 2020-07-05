@@ -148,16 +148,19 @@ mat-label{
   min-width: unset !important;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 768px) {
   .task-list{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    text-align: center;
-    margin: 3em 7% 3em 5vw;
-    gap: 2em;
   }
 }
 
 @media (max-width: 575.98px) {
-
+  .task-list{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+    margin: 2em 7% 2em 5vw;
+    gap: 2em;
+  }
 }
