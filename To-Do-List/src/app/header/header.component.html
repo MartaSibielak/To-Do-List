@@ -14,3 +14,13 @@
     </li>
   </ul>
 </mat-toolbar>
+<mat-toolbar class="toggle-menu">
+  <button class="item-link" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">KANBAN</button>
+  <button class="item-link" mat-button [matMenuTriggerFor]="menu">MENU</button>
+  <mat-menu #menu="matMenu" class="toggle-list">
+    <button mat-menu-item routerLink="todo">TO DO</button>
+    <button mat-menu-item routerLink="inprogress">IN PROGRESS</button>
+    <button mat-menu-item routerLink="done">DONE</button>
+  </mat-menu>
+</mat-toolbar>
+

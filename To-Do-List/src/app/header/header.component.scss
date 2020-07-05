@@ -30,4 +30,38 @@ mat-toolbar{
   padding: 1.70em;
   border-radius: 2em 2em 0 0;
 }
+.toggle-menu{
+  display: none;
+}
 
+
+@media (max-width: 575.98px) {
+  .navbar-item{
+    font-size: 12px;
+    margin-right: 1em;
+    letter-spacing: 0.02em;
+  }
+  .active{
+    padding: 1.80em;
+  }
+}
+
+@media (max-width: 305px) {
+  mat-toolbar{
+    display: none;
+  }
+  .toggle-menu{
+    display: flex;
+  }
+  .item-link{
+    margin: 1em;
+  }
+  .active {
+    border: none;
+  }
+  .mat-menu-item{
+    padding-left: 6em;
+    padding-right: 6em;
+  }
+
+}

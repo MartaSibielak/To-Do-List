@@ -26,6 +26,8 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatSliderModule} from "@angular/material/slider";
 import {MatNativeDateModule} from "@angular/material/core";
 import { ChangeStatusPipe } from './change-status.pipe';
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {_MatMenuDirectivesModule, MatMenuModule} from "@angular/material/menu";
 
 
 @NgModule({
@@ -56,7 +58,10 @@ import { ChangeStatusPipe } from './change-status.pipe';
     MatIconModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSliderModule
+    MatSliderModule,
+    MatSidenavModule,
+    _MatMenuDirectivesModule,
+    MatMenuModule
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]
